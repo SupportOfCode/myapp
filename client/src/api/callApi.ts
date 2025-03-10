@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const apiUrl = import.meta.env.VITE_API_URL;
-export const getProduct = async (setProduct: any) => {
+export const getTodo = async (setProduct: any) => {
     try {
       const res = await axios.get(
-        apiUrl + "products" 
+        apiUrl + "todos" 
       );
       setProduct(res.data);
     } catch (error) {
@@ -12,31 +12,31 @@ export const getProduct = async (setProduct: any) => {
     }
 };
   
-export const addProduct = async ({title, img }: any) => {
+export const addTodo = async ({title, status }: any) => {
   try {
-    await axios.post(apiUrl + "products", {
+    await axios.post(apiUrl + "todos", {
       title,
-      img
+      status
     });
   } catch (error) {
     console.log(error);
   }
 };
 
-export const updateProduct = async ({ id , title, img}: any) => {
+export const updateTodo = async ({ id , title, status}: any) => {
   try {
-    await axios.put(apiUrl + "products/" + id, {
+    await axios.put(apiUrl + "todos/" + id, {
       title,
-      img
+      status
     });
   } catch (error) {
     console.log(error);
   }
 };
 
-export const deleteProduct = async ( id : string) => {
+export const deleteTodo = async ( id : string) => {
   try {
-    await axios.delete(apiUrl + "products/" + id);
+    await axios.delete(apiUrl + "todos/" + id);
   } catch (error) {
     console.log(error);
   }

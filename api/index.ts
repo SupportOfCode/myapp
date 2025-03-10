@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import productRoutes from './routes/productRoutes'
+import todoRoutes from './routes/todoRoutes'
 
 dotenv.config();
 
@@ -15,7 +15,7 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-app.use("/products", productRoutes);
+app.use("/todos", todoRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
