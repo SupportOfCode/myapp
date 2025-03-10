@@ -1,12 +1,12 @@
 import axios from "axios";
 
 const apiUrl = import.meta.env.VITE_API_URL;
-export const getTodo = async (setProduct: any) => {
+export const getTodo = async (setTodo: any) => {
     try {
       const res = await axios.get(
         apiUrl + "todos" 
       );
-      setProduct(res.data);
+      setTodo(res.data);
     } catch (error) {
       console.log(error);
     }
