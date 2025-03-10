@@ -5,9 +5,9 @@ interface ITodo extends Document {
   status: string;
 }
 
-const ProductSchema: Schema = new Schema({
+const TodoSchema: Schema = new Schema({
   title: { type: String, required: true },
   status: { type: String, required: true },
 },  { timestamps: true });
 
-export default mongoose.model<ITodo>("Product", ProductSchema);
+export default mongoose.model<ITodo>("Todo", TodoSchema);
